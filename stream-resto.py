@@ -42,7 +42,9 @@ feature2 = st.number_input('Price', step=0.01, format="%.2f") # Mengatur step da
 
 # Membuat prediksi berdasarkan input user
 if st.button('Prediksi'):
-    prediksi_profit = decision_tree.predict([[feature1, feature2]])  # Mengonversi hasil prediksi menjadi integer
+    prediksi_profit = decision_tree.predict([[feature1, feature2]]) 
+    prediksi_profit_integer = int(prediksi_profit[0]) 
+    # Mengonversi hasil prediksi menjadi integer
     st.write(f'Prediksi Profit: {prediksi_profit}')
 
 
