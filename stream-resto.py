@@ -32,6 +32,7 @@ X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_
 decision_tree = DecisionTreeClassifier()
 # Latih model Decision Tree pada data pelatihan
 decision_tree.fit(X_train, y_train)
+y_pred = decision_tree.predict(X_test)
 
 # Membuat input untuk prediksi user
 st.write('Masukkan nilai untuk prediksi:')
