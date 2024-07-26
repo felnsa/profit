@@ -7,7 +7,7 @@ from sklearn.preprocessing import OrdinalEncoder
 st.markdown("""
     <style>
         .main {
-            background-color: #f0f2f6;
+            background-color: #adb5bd;
             padding: 20px;
             border-radius: 10px;
         }
