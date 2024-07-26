@@ -61,3 +61,8 @@ if st.button('Prediksi'):
     
     # Tampilkan hasil prediksi
     st.write(f'Prediksi Profit: {prediksi_profit[0]}')
+    st.write("Catatan: Pastikan harga dimasukkan dengan format desimal seperti 2.50.")
+    st.write("Catatan: Profit 0 = Low, Profit 1 = Medium, Profit 2 = High")
+
+
+ 
