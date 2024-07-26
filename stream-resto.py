@@ -34,7 +34,7 @@ st.markdown("""
         .stButton button:hover {
             background-color: white;
             color: black;
-            border: 2px solid #4CAF50;
+            border: 5px solid #4CAF50;
         }
     </style>
 """, unsafe_allow_html=True)
@@ -95,7 +95,7 @@ feature1 = st.selectbox('Menu Category', options=categories)
 feature1_numerik = category_map[feature1]
 
 # Input untuk harga dengan number_input, memungkinkan desimal
-feature2 = st.number_input('Price', step=0.01, format="%.2f")
+feature2 = st.number_input('Price ($)', step=0.01, format="%.2f")
 
 # Membuat prediksi berdasarkan input user
 if st.button('🔍 Prediksi'):
