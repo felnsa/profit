@@ -34,14 +34,24 @@ decision_tree = DecisionTreeClassifier()
 decision_tree.fit(X_train, y_train)
 y_pred = decision_tree.predict(X_test)
 
+# DataFrame contoh
+df = pd.DataFrame({'Menu Category': ['Appetizers', 'Desserts'], 'Price': [2.5, 1.0]})
+
+# Peta kategori ke angka
+category_map = {category: idx for idx, category in enumerate(categories)}
+
+# Mengonversi fitur kategorikal menjadi angka
+df['Menu Category'] = df['Menu Category'].map(category_map)
+
+
 st.write('Masukkan nilai untuk prediksi:')
 # Daftar kategori yang tersedia
 categories = ['Beverages', 'Appetizers', 'Desserts','Main Course'] 
-category_map = {category: idx for idx, category in enumerate(categories)}
 feature1 = st.selectbox('Menu Category', options=categories)
 feature1_numerik = category_map[feature1]
 feature2 = st.number_input('Price', step=0.01, format="%.2f") # Mengatur step dan format untuk bilangan bulat
 
+    
 # Membuat prediksi berdasarkan input user
 if st.button('Prediksi'):
     prediksi_profit = decision_tree.predict([[feature1, feature2]])  # Mengonversi hasil prediksi menjadi integer
