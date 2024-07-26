@@ -46,3 +46,13 @@ feature2 = st.number_input('Price', step=0.01, format="%.2f") # Mengatur step da
 if st.button('Prediksi'):
     prediksi_profit = decision_tree.predict([[feature1, feature2]])  # Mengonversi hasil prediksi menjadi integer
     st.write(f'Prediksi Profit: {prediksi_profit}')
+    import numpy as np
+
+# Debugging: tampilkan tipe data fitur
+st.write(f'Tipe data feature1_numerik: {type(feature1_numerik)}')
+st.write(f'Tipe data feature2: {type(feature2)}')
+
+# Jika model menggunakan NumPy array
+features_array = np.array([feature1_numerik, feature2])
+st.write(f'Features array: {features_array}')
+
