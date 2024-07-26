@@ -59,6 +59,7 @@ if st.button('🔍 Prediksi'):
     # Melakukan prediksi
     prediksi_profit = decision_tree.predict([features_input])
     st.success(f'💰 Prediksi Profit: {prediksi_profit[0]}')
+    st.sidebar.header("Informasi Tambahan")
 
     # Tampilkan hasil prediksi
     st.write(f'Prediksi Profit: {prediksi_profit[0]}')
