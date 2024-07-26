@@ -38,7 +38,7 @@ st.write('Masukkan nilai untuk prediksi:')
 # Daftar kategori yang tersedia
 categories = ['Beverages', 'Appetizers', 'Dessert','Main Course'] 
 feature1 = st.selectbox('Menu Category', options=categories)
-feature2 = st.number_input('Price', format="%.2f") # Mengatur step dan format untuk bilangan bulat
+feature2 = st.number_input('Price') # Mengatur step dan format untuk bilangan bulat
 
 # Membuat prediksi berdasarkan input user
 if st.button('Prediksi'):
