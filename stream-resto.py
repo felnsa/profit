@@ -38,7 +38,7 @@ st.title('🌟 Prediksi Profit Restoran 🌟')
 
 # Catatan kecil di atas aplikasi dengan highlight
 st.markdown("""
-<div style="background-color: #4CAF50; padding: 10px; border-radius: 2px;">
+<div style="background-color: #EFD28D; padding: 10px; border-radius: 2px;">
 <b>Catatan Penting:</b>
 <ul>
     <li>Pilih kategori menu dari dropdown.</li>
