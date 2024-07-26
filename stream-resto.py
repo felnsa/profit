@@ -19,7 +19,7 @@ st.markdown("""
         }
         .stButton button {
             background-color: #4CAF50;
-            color: white;
+            color: black;
             border: none;
             padding: 15px 32px;
             text-align: center;
