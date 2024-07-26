@@ -4,6 +4,41 @@ from sklearn.model_selection import train_test_split
 from sklearn.tree import DecisionTreeClassifier
 from sklearn.preprocessing import OrdinalEncoder
 
+# CSS untuk memperindah tampilan
+st.markdown("""
+    <style>
+        .main {
+            background-color: #f0f2f6;
+            padding: 20px;
+            border-radius: 10px;
+        }
+        .sidebar .sidebar-content {
+            background-color: #f8f9fa;
+            padding: 20px;
+            border-radius: 10px;
+        }
+        .stButton button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            transition-duration: 0.4s;
+            cursor: pointer;
+            border-radius: 12px;
+        }
+        .stButton button:hover {
+            background-color: white;
+            color: black;
+            border: 2px solid #4CAF50;
+        }
+    </style>
+""", unsafe_allow_html=True)
+
 # Judul aplikasi
 st.title('🌟 Prediksi Profit Restoran 🌟')
 
