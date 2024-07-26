@@ -4,7 +4,7 @@ from sklearn.model_selection import train_test_split
 from sklearn.tree import DecisionTreeClassifier
 from sklearn.preprocessing import OrdinalEncoder
 
-t.markdown("""
+st.markdown("""
     <style>
         .main {
             background-color: #f0f2f6;
