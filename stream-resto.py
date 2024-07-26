@@ -36,8 +36,10 @@ y_pred = decision_tree.predict(X_test)
 
 st.write('Masukkan nilai untuk prediksi:')
 # Daftar kategori yang tersedia
-categories = ['Beverages', 'Appetizers', 'Dessert','Main Course'] 
+categories = ['Beverages', 'Appetizers', 'Desserts','Main Course'] 
+category_map = {category: idx for idx, category in enumerate(categories)}
 feature1 = st.selectbox('Menu Category', options=categories)
+feature1_numerik = category_map[feature1]
 feature2 = st.number_input('Price', step=0.01, format="%.2f") # Mengatur step dan format untuk bilangan bulat
 
 # Membuat prediksi berdasarkan input user
