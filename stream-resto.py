@@ -1,25 +1,25 @@
-from pyexpat import model
 import streamlit as st
 import pandas as pd
 from sklearn.model_selection import train_test_split
 from sklearn.tree import DecisionTreeClassifier
-from sklearn.metrics import mean_squared_error
-from sklearn.preprocessing import LabelEncoder, OrdinalEncoder 
+from sklearn.preprocessing import OrdinalEncoder
 
 # Judul aplikasi
 st.title('Aplikasi Prediksi Profit')
+
 # Membaca data dari file CSV
 df = pd.read_csv('restaurant_menu_optimization_data.csv')
 df['Profitability Number'] = df['Profitability'].apply(lambda x: 0 if x == 'Low' else 1 if x == 'Medium' else 2)
 
-df=df.dropna()
-df=df.drop_duplicates()
+df = df.dropna()
+df = df.drop_duplicates()
 
 # Memilih fitur dan target
 features = ['MenuCategory', 'Price']
 
 X = df[features]
 y = df['Profitability Number']
+
 # Apply OrdinalEncoder to categorical columns in the entire dataset X BEFORE splitting
 categ_cols = X.select_dtypes(include=['object']).columns
 ordinal_encoder = OrdinalEncoder()
@@ -34,17 +34,30 @@ decision_tree = DecisionTreeClassifier()
 decision_tree.fit(X_train, y_train)
 y_pred = decision_tree.predict(X_test)
 
-st.write('Masukkan nilai untuk prediksi:')
 # Daftar kategori yang tersedia
-categories = ['Beverages', 'Appetizers', 'Desserts','Main Course'] 
+categories = ['Beverages', 'Appetizers', 'Desserts', 'Main Course'] 
+
+# Buat peta kategori ke angka
+category_map = {category: idx for idx, category in enumerate(categories)}
+
+st.write('Masukkan nilai untuk prediksi:')
+
+# Input untuk kategori menggunakan selectbox
 feature1 = st.selectbox('Menu Category', options=categories)
-feature2 = st.number_input('Price', step=0.01, format="%.2f") # Mengatur step dan format untuk bilangan bulat
+
+# Mengonversi kategori yang dipilih menjadi angka
+feature1_numerik = category_map[feature1]
+
+# Input untuk harga dengan number_input, memungkinkan desimal
+feature2 = st.number_input('Price', step=0.01, format="%.2f")
 
 # Membuat prediksi berdasarkan input user
 if st.button('Prediksi'):
-    prediksi_profit = decision_tree.predict([[feature1, feature2]]) 
-    prediksi_profit_integer = int(prediksi_profit[0]) 
-    # Mengonversi hasil prediksi menjadi integer
-    st.write(f'Prediksi Profit: {prediksi_profit}')
-
-
+    # Mengonversi data input ke format yang sesuai dengan model
+    features_input = [feature1_numerik, feature2]
+    
+    # Melakukan prediksi
+    prediksi_profit = decision_tree.predict([features_input])
+    
+    # Tampilkan hasil prediksi
+    st.write(f'Prediksi Profit: {prediksi_profit[0]}')
