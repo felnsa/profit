@@ -19,6 +19,10 @@ features = ['MenuCategory', 'Price']
 
 X = df[features]
 y = df['Profitability Number']
+# Apply OrdinalEncoder to categorical columns in the entire dataset X BEFORE splitting
+categ_cols = X.select_dtypes(include=['object']).columns
+ordinal_encoder = OrdinalEncoder()
+X[categ_cols] = ordinal_encoder.fit_transform(X[categ_cols])
 
 # Membagi data menjadi training dan testing
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=0)
