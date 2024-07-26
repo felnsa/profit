@@ -8,7 +8,7 @@ from sklearn.preprocessing import OrdinalEncoder
 st.markdown("""
     <style>
         .main {
-            background-color: #f0f2f6;
+            background-color: #e3d5ca;
             padding: 20px;
             border-radius: 10px;
         }
