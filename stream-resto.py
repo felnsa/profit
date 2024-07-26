@@ -6,11 +6,6 @@ from sklearn.preprocessing import OrdinalEncoder
 
 st.markdown("""
     <style>
-        body {
-            background-color: #f8f9fa;
-            font-family: 'Helvetica Neue', sans-serif;
-            color: #222;
-        }
         .main {
             background-color: #dee2e6;
             padding: 20px;
