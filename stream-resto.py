@@ -29,7 +29,7 @@ X[categ_cols] = ordinal_encoder.fit_transform(X[categ_cols])
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=0)
 
 # Inisialisasi model Decision Tree
-decision_tree = DecisionTreeClassifier(random_state=0)
+decision_tree = DecisionTreeClassifier()
 # Latih model Decision Tree pada data pelatihan
 decision_tree.fit(X_train, y_train)
 
