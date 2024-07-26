@@ -6,6 +6,11 @@ from sklearn.preprocessing import OrdinalEncoder
 
 st.markdown("""
     <style>
+        body {
+            background-color: #f8f9fa;
+            font-family: 'Helvetica Neue', sans-serif;
+            color: #333;
+        }
         .main {
             background-color: #dee2e6;
             padding: 20px;
@@ -107,7 +112,6 @@ if st.button('🔍 Prediksi'):
    
     # Tampilkan hasil prediksi
     st.write(f'Prediksi Profit: {prediksi_profit[0]}')
-    st.write("Catatan: Pastikan harga dimasukkan dengan format desimal seperti 2.50.")
     st.write("Catatan: Profit 0 = Low, Profit 1 = Medium, Profit 2 = High")
 
 
