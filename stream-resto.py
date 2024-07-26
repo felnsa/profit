@@ -5,7 +5,7 @@ from sklearn.tree import DecisionTreeClassifier
 from sklearn.preprocessing import OrdinalEncoder
 
 # Judul aplikasi
-st.title('Aplikasi Prediksi Profit')
+st.title('Prediksi Profit Restaurant')
 
 # Membaca data dari file CSV
 df = pd.read_csv('restaurant_menu_optimization_data.csv')
