@@ -52,13 +52,14 @@ feature1_numerik = category_map[feature1]
 feature2 = st.number_input('Price', step=0.01, format="%.2f")
 
 # Membuat prediksi berdasarkan input user
-if st.button('Prediksi'):
+if st.button('🔍 Prediksi'):
     # Mengonversi data input ke format yang sesuai dengan model
     features_input = [feature1_numerik, feature2]
     
     # Melakukan prediksi
     prediksi_profit = decision_tree.predict([features_input])
-    
+    st.success(f'💰 Prediksi Profit: {prediksi_profit[0]}')
+
     # Tampilkan hasil prediksi
     st.write(f'Prediksi Profit: {prediksi_profit[0]}')
     st.write("Catatan: Pastikan harga dimasukkan dengan format desimal seperti 2.50.")
