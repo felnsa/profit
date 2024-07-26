@@ -40,7 +40,7 @@ categories = ['Beverages', 'Appetizers', 'Desserts', 'Main Course']
 # Buat peta kategori ke angka
 category_map = {category: idx for idx, category in enumerate(categories)}
 
-st.write('Masukkan nilai untuk prediksi:')
+st.subheader('Masukkan nilai untuk prediksi:')
 
 # Input untuk kategori menggunakan selectbox
 feature1 = st.selectbox('Menu Category', options=categories)
@@ -59,8 +59,7 @@ if st.button('🔍 Prediksi'):
     # Melakukan prediksi
     prediksi_profit = decision_tree.predict([features_input])
     st.success(f'💰 Prediksi Profit: {prediksi_profit[0]}')
-    st.sidebar.header("Informasi Tambahan")
-
+   
     # Tampilkan hasil prediksi
     st.write(f'Prediksi Profit: {prediksi_profit[0]}')
     st.write("Catatan: Pastikan harga dimasukkan dengan format desimal seperti 2.50.")
