@@ -40,6 +40,5 @@ feature2 = st.number_input('Price')
 
 # Membuat prediksi berdasarkan input user
 if st.button('Prediksi'):
-    user_input = [[feature1, feature2,]]
-    prediksi_profit = decision_tree(user_input)
+    prediksi_profit = decision_tree([[feature1, feature2]])
     st.write(f'Prediksi Profit: {prediksi_profit[0]}')
