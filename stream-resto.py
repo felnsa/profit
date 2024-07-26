@@ -7,6 +7,17 @@ from sklearn.preprocessing import OrdinalEncoder
 # Judul aplikasi
 st.title('🌟 Prediksi Profit Restoran 🌟')
 
+# Catatan kecil di atas aplikasi dengan highlight
+st.markdown("""
+<div style="background-color: #f9f9f9; padding: 10px; border-radius: 5px;">
+<b>Catatan Penting:</b>
+<ul>
+    <li>Pilih kategori menu dari dropdown.</li>
+    <li>Masukkan harga dengan dua angka desimal.</li>
+</ul>
+</div>
+""", unsafe_allow_html=True)
+
 # Membaca data dari file CSV
 df = pd.read_csv('restaurant_menu_optimization_data.csv')
 df['Profitability Number'] = df['Profitability'].apply(lambda x: 0 if x == 'Low' else 1 if x == 'Medium' else 2)
