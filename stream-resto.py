@@ -9,7 +9,10 @@ from sklearn.metrics import mean_squared_error
 st.title('Aplikasi Prediksi Profit')
 # Membaca data dari file CSV
 df = pd.read_csv('restaurant_menu_optimization_data.csv')
+df['Profitability Number'] = df['Profitability'].apply(lambda x: 0 if x == 'Low' else 1 if x == 'Medium' else 2)
 
+df=df.dropna()
+df=df.drop_duplicates()
 
 # Memilih fitur dan target
 features = ['MenuCategory', 'Price']
